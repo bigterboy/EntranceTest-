@@ -1,0 +1,6 @@
+const map = {
+  BASE_REDUCER: 'BASE_REDUCER',
+  LOGIN_REDUCER: 'LOGIN_REDUCER',
+  LANGUAGE_REDUCER: 'LANGUAGE_REDUCER',
+};
+export default map;
