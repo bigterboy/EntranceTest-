@@ -34,7 +34,6 @@ const TestScreen = forwardRef((props, ref) => {
 
   useImperativeHandle(ref, () => ({
     getValue: () => {
-      console.log('NGON ROI: ', value);
       return value;
     },
   }));

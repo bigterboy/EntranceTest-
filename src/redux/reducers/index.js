@@ -9,6 +9,7 @@ import baseReducer from './baseReducer';
 
 import loginReducer from './loginReducer';
 import languageReducer from './languageReducer';
+import userReducer from './userReducer';
 
 const persistConfigApp = key => {
   return {
@@ -27,6 +28,7 @@ const reducers = {
     persistConfigApp(Map.LOGIN_REDUCER),
     loginReducer,
   ),
+  [Map.USER_REDUCER]: userReducer,
   [Map.LANGUAGE_REDUCER]: languageReducer,
 };
 

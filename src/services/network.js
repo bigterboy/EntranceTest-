@@ -4,30 +4,6 @@ import Config from 'react-native-config';
 // showLastCommitMessageForThisLibrary.js
 import {create} from 'apisauce';
 
-// define the api
-// const api = create({
-//   baseURL: 'https://api.github.com',
-//   headers: {Accept: 'application/vnd.github.v3+json'},
-// });
-
-// const api = create({
-//   baseURL: 'https://api.github.com',
-//   headers: {Accept: 'application/vnd.github.v3+json'},
-//   timeout: 30000,
-// });
-
-// // start making calls
-// api
-//   .get('/repos/skellock/apisauce/commits')
-//   .then(response => {
-//     console.log('IN RA LA123: ', response.data[0]);
-//     // response.data[0].commit.message;
-//   })
-//   .then(console.log('OKKKKKKKNGON'));
-
-// // customizing headers per-request
-// api.post('/users', {name: 'steve'}, {headers: {'x-gigawatts': '1.21'}});
-
 export default class NetworkRequest {
   static Method = {
     GET: 'get',
@@ -42,8 +18,6 @@ export default class NetworkRequest {
   };
 
   request = (method, url, params, data) => {
-    console.log('OK KO');
-
     const api = create({
       baseURL: 'http://streaming.nexlesoft.com:4000/api',
       headers: {
@@ -64,7 +38,6 @@ export default class NetworkRequest {
         .then(response => {
           console.log('DATA REQUEST API: ', response);
           if (response?.data?.errors) {
-            // console.log('ERRO LOI LA: ', response?.data?.errors);
             return reject(response?.data?.errors);
           }
           return resolve(response.data);

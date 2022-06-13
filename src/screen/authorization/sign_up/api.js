@@ -18,9 +18,9 @@ export const requestApi = async (
       email,
       password,
     );
-    Log.Success(response);
+    console.log('REQUEST API: ', response);
     navigation.goBack();
-    onSuccess();
+    onSuccess(response);
   } catch (error) {
     navigation.goBack();
     Log.Error(error);

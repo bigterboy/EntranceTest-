@@ -33,20 +33,20 @@ class Screen extends Component {
   }
 
   requestApiSignUp = async () => {
-    this.props.navigation.navigate('Login');
-    // let response = await Api.requestApi(
-    //   this.props.navigation,
-    //   'Trung',
-    //   'Huynh',
-    //   this.email.current.getValue(),
-    //   this.password.current.getValue(),
-    //   () => {
-    //     this.props.navigation.navigate('Login');
-    //   },
-    //   error => {
-    //     errorMessage: 'Email or password not not valid';
-    //   },
-    // );
+    let response = await Api.requestApi(
+      this.props.navigation,
+      'Trung',
+      'Huynh',
+      this.email.current.getValue(),
+      this.password.current.getValue(),
+      user => {
+        this.props.saveUser(user);
+        this.props.navigation.navigate('Login');
+      },
+      error => {
+        errorMessage: 'Email or password not not valid';
+      },
+    );
   };
 
   renderError = () => {

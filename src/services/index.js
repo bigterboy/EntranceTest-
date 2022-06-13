@@ -12,7 +12,7 @@ const SIGN_UP = async (firstName, lastName, email, password) => {
       })
       .then(response => {
         console.log('OK: ', response);
-        return resolve(response.data);
+        return resolve(response);
       })
       .catch(error => {
         console.log('error: ', error);

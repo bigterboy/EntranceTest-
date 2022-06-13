@@ -1,3 +1,3 @@
 import Action from '@action';
 
-export const counterIncrease = () => Action.base.increase();
+export const saveUser = payload => Action.user.saveUser(payload);
